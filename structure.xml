@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a2" title="">
+  <file path="\vierbergenlars\SemVer\expression.php" hash="84f691155e2085066f7893944237fa24" package="Default">
+    <parse_markers>
+      <error line="5" code="50018">No DocBlock was found for property $global_single_version</error>
+      <error line="6" code="50018">No DocBlock was found for property $global_single_xrange</error>
+      <error line="7" code="50018">No DocBlock was found for property $global_single_comparator</error>
+      <error line="8" code="50018">No DocBlock was found for property $global_single_spermy</error>
+      <error line="9" code="50018">No DocBlock was found for property $range_mask</error>
+      <error line="10" code="50018">No DocBlock was found for property $regexp_mask</error>
+      <error line="11" code="50018">No DocBlock was found for property $dirty_regexp_mask</error>
+      <error line="12" code="50018">No DocBlock was found for property $wildcards</error>
+      <error line="13" code="50018">No DocBlock was found for property $chunks</error>
+      <error line="3" code="50000">No DocBlock was found for expression</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \vierbergenlars\SemVer\expression.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="vierbergenlars\SemVer" line="3" package="Default">
+      <name>expression</name>
+      <full_name>\vierbergenlars\SemVer\expression</full_name>
+      <extends/>
+      <constant namespace="vierbergenlars\SemVer" line="4" package="Default">
+        <name>version</name>
+        <value><![CDATA['2.0.0--']]></value>
+      </constant>
+      <property final="false" static="true" visibility="protected" line="5" package="Default">
+        <name>$global_single_version</name>
+        <default><![CDATA['(([0-9]+)(\.([0-9]+)(\.([0-9]+)(-([0-9]+))?(-?([a-zA-Z-][a-zA-Z0-9\.-:]*)?)?)?)?)']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="6" package="Default">
+        <name>$global_single_xrange</name>
+        <default><![CDATA['(([0-9]+|[xX*])(\\.([0-9]+|[xX*])(\\.([0-9]+|[xX*])(-([0-9]+))?(-?([a-zA-Z-][a-zA-Z0-9\.-:]*)?)?)?)?)']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="7" package="Default">
+        <name>$global_single_comparator</name>
+        <default><![CDATA['([<>]=?)?\\s*']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="8" package="Default">
+        <name>$global_single_spermy</name>
+        <default><![CDATA['(~?)>?\\s*']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="9" package="Default">
+        <name>$range_mask</name>
+        <default><![CDATA['%1$s\\s+-\\s+%1$s']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="10" package="Default">
+        <name>$regexp_mask</name>
+        <default><![CDATA['/%s/']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="11" package="Default">
+        <name>$dirty_regexp_mask</name>
+        <default><![CDATA['/[v=]*%s/']]></default>
+      </property>
+      <property final="false" static="true" visibility="protected" line="12" package="Default">
+        <name>$wildcards</name>
+        <default><![CDATA[array('x','X','*')]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="13" package="Default">
+        <name>$chunks</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="19" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="14">
+          <description><![CDATA[standarizes the comparator/range/whatever-string to chunks
+Enter description here ...]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="" type="\vierbergenlars\SemVer\unknown_type" variable="$versions">
+            <type by_reference="false">\vierbergenlars\SemVer\unknown_type</type>
+          </tag>
+        </docblock>
+        <argument line="19">
+          <name>$versions</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="46" package="">
+        <name>satisfiedBy</name>
+        <type>function</type>
+        <docblock line="41">
+          <description><![CDATA[Checks if this expression is satisfied by a version]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="param" description="The verion to check against" type="\vierbergenlars\SemVer\version" variable="$version">
+            <type by_reference="false">\vierbergenlars\SemVer\version</type>
+          </tag>
+          <tag line="41" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$version</name>
+          <default><![CDATA[]]></default>
+          <type>version</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="73" package="">
+        <name>getChunks</name>
+        <type>function</type>
+        <docblock line="69">
+          <description><![CDATA[Get the raw data blocks]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="69" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="83" package="">
+        <name>getChunk</name>
+        <type>function</type>
+        <docblock line="76">
+          <description><![CDATA[Get a raw data block]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="" type="int" variable="$x">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="76" name="param" description="" type="int" variable="$y">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="76" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="76" name="internal" description=""/>
+        </docblock>
+        <argument line="83">
+          <name>$x</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="83">
+          <name>$y</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="90" package="">
+        <name>getString</name>
+        <type>function</type>
+        <docblock line="86">
+          <description><![CDATA[Get the whole or object as a string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="86" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="102" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="97">
+          <description><![CDATA[Converts the object to a string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="uses" description="\vierbergenlars\SemVer\getString()" refers="\vierbergenlars\SemVer\getString()"/>
+          <tag line="97" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="110" package="">
+        <name>validRange</name>
+        <type>function</type>
+        <docblock line="105">
+          <description><![CDATA[Converts to a valid range]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="105" name="uses" description="\vierbergenlars\SemVer\getString()" refers="\vierbergenlars\SemVer\getString()"/>
+          <tag line="105" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="118" package="">
+        <name>maxSatisfying</name>
+        <type>function</type>
+        <docblock line="113">
+          <description><![CDATA[Get the highest version that satisfies the expression]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="param" description="Array containing strings or \vierbergenlars\SemVer\version objects" type="array" variable="$versions">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="113" name="return" description="" type="\vierbergenlars\SemVer\version|boolean">
+            <type by_reference="false">\vierbergenlars\SemVer\version</type>
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="118">
+          <name>$versions</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="140" package="">
+        <name>standarize</name>
+        <type>function</type>
+        <docblock line="132">
+          <description><![CDATA[standarizes a single version]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="132" name="param" description="" type="string" variable="$version">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="132" name="param" description="Set to true if the version string should be padded with zeros instead of x-es" type="bool" variable="$padZero">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="132" name="throws" description="" type="\vierbergenlars\SemVer\SemVerException">
+            <type by_reference="false">\vierbergenlars\SemVer\SemVerException</type>
+          </tag>
+          <tag line="132" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="140">
+          <name>$version</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="140">
+          <name>$padZero</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="164" package="">
+        <name>standarizeSingleComparator</name>
+        <type>function</type>
+        <docblock line="158">
+          <description><![CDATA[standarizes a single version with comparators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="158" name="param" description="" type="string" variable="$version">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="158" name="throws" description="" type="\vierbergenlars\SemVer\SemVerException">
+            <type by_reference="false">\vierbergenlars\SemVer\SemVerException</type>
+          </tag>
+          <tag line="158" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="164">
+          <name>$version</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="181" package="">
+        <name>standarizeMultipleComparators</name>
+        <type>function</type>
+        <docblock line="176">
+          <description><![CDATA[standarizes a bunch of versions with comparators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="param" description="" type="string" variable="$versions">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="176" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="181">
+          <name>$versions</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="202" package="">
+        <name>rangesToComparators</name>
+        <type>function</type>
+        <docblock line="196">
+          <description><![CDATA[standarizes a bunch of version ranges to comparators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="196" name="param" description="" type="string" variable="$range">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="196" name="throws" description="" type="\vierbergenlars\SemVer\SemVerException">
+            <type by_reference="false">\vierbergenlars\SemVer\SemVerException</type>
+          </tag>
+          <tag line="196" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="202">
+          <name>$range</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="215" package="">
+        <name>xRangesToComparators</name>
+        <type>function</type>
+        <docblock line="210">
+          <description><![CDATA[standarizes a bunch of x-ranges to comparators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="210" name="param" description="" type="string" variable="$ranges">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="210" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="215">
+          <name>$ranges</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="vierbergenlars\SemVer" line="225" package="">
+        <name>xRangesToComparatorsCallback</name>
+        <type>function</type>
+        <docblock line="219">
+          <description><![CDATA[Callback for xRangesToComparators()]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="219" name="internal" description=""/>
+          <tag line="219" name="param" description="" type="array" variable="$matches">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="219" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="225">
+          <name>$matches</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="241" package="">
+        <name>spermiesToComparators</name>
+        <type>function</type>
+        <docblock line="236">
+          <description><![CDATA[standarizes a bunch of ~-ranges to comparators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="236" name="param" description="" type="string" variable="$spermies">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="236" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="241">
+          <name>$spermies</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="vierbergenlars\SemVer" line="251" package="">
+        <name>spermiesToComparatorsCallback</name>
+        <type>function</type>
+        <docblock line="245">
+          <description><![CDATA[Callback for spermiesToComparators()]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="245" name="internal" description=""/>
+          <tag line="245" name="param" description="" type="array" variable="$matches">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="245" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="251">
+          <name>$matches</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="vierbergenlars\SemVer" line="271" package="">
+        <name>matchesToVersionParts</name>
+        <type>function</type>
+        <docblock line="260">
+          <description><![CDATA[Converts matches to named version parts, replaces all wildcards by lowercase x]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="260" name="param" description="Matches array from preg_match" type="array" variable="$matches">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="260" name="param" description="Reference to major version" type="int|string" variable="$major">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="Reference to minor version" type="int|string" variable="$minor">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="Reference to patch version" type="int|string" variable="$patch">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="Reference to build number" type="int|string" variable="$build">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="Reference to pre-release tags" type="int|string" variable="$prtag">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="Default value for a version if not found in matches array" type="int|string" variable="$default">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="param" description="The position of the raw occurence of the major version number" type="int" variable="$offset">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="271">
+          <name>$matches</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$major</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$minor</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$patch</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$build</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$prtag</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$default</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="271">
+          <name>$offset</name>
+          <default><![CDATA[2]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="\vierbergenlars\SemVer\SemVerException.php" hash="cb7915c3a86d5be2b37955617a122b4a" package="Default">
+    <parse_markers>
+      <error line="3" code="50000">No DocBlock was found for SemVerException</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \vierbergenlars\SemVer\SemVerException.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="vierbergenlars\SemVer" line="3" package="Default">
+      <name>SemVerException</name>
+      <full_name>\vierbergenlars\SemVer\SemVerException</full_name>
+      <extends>\Exception</extends>
+    </class>
+  </file>
+  <file path="\vierbergenlars\SemVer\version.php" hash="9931d1e021ce2eca189fbcca62396b11" package="Default">
+    <parse_markers>
+      <error line="4" code="50018">No DocBlock was found for property $version</error>
+      <error line="5" code="50018">No DocBlock was found for property $major</error>
+      <error line="6" code="50018">No DocBlock was found for property $minor</error>
+      <error line="7" code="50018">No DocBlock was found for property $patch</error>
+      <error line="8" code="50018">No DocBlock was found for property $build</error>
+      <error line="9" code="50018">No DocBlock was found for property $prtag</error>
+      <error line="10" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="22" code="50010">No DocBlock was found for method getVersion()</error>
+      <error line="25" code="50010">No DocBlock was found for method getMajor()</error>
+      <error line="28" code="50010">No DocBlock was found for method getMinor()</error>
+      <error line="31" code="50010">No DocBlock was found for method getPatch()</error>
+      <error line="34" code="50010">No DocBlock was found for method getBuild()</error>
+      <error line="37" code="50010">No DocBlock was found for method getTag()</error>
+      <error line="40" code="50010">No DocBlock was found for method valid()</error>
+      <error line="43" code="50010">No DocBlock was found for method inc()</error>
+      <error line="53" code="50010">No DocBlock was found for method satisfies()</error>
+      <error line="56" code="50010">No DocBlock was found for method cmp()</error>
+      <error line="69" code="50010">No DocBlock was found for method gt()</error>
+      <error line="86" code="50010">No DocBlock was found for method gte()</error>
+      <error line="89" code="50010">No DocBlock was found for method lt()</error>
+      <error line="92" code="50010">No DocBlock was found for method lte()</error>
+      <error line="95" code="50010">No DocBlock was found for method eq()</error>
+      <error line="100" code="50010">No DocBlock was found for method neq()</error>
+      <error line="103" code="50010">No DocBlock was found for method compare()</error>
+      <error line="109" code="50010">No DocBlock was found for method rcompare()</error>
+      <error line="3" code="50000">No DocBlock was found for version</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file \vierbergenlars\SemVer\version.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="vierbergenlars\SemVer" line="3" package="Default">
+      <name>version</name>
+      <full_name>\vierbergenlars\SemVer\version</full_name>
+      <extends>\vierbergenlars\SemVer\expression</extends>
+      <property final="false" static="false" visibility="private" line="4" package="Default">
+        <name>$version</name>
+        <default><![CDATA['0.0.0']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="5" package="Default">
+        <name>$major</name>
+        <default><![CDATA['0']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="6" package="Default">
+        <name>$minor</name>
+        <default><![CDATA['0']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" package="Default">
+        <name>$patch</name>
+        <default><![CDATA['0']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" package="Default">
+        <name>$build</name>
+        <default><![CDATA['']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" package="Default">
+        <name>$prtag</name>
+        <default><![CDATA['']]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="10" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <argument line="10">
+          <name>$version</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="22" package="">
+        <name>getVersion</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="25" package="">
+        <name>getMajor</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="28" package="">
+        <name>getMinor</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="31" package="">
+        <name>getPatch</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="34" package="">
+        <name>getBuild</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="37" package="">
+        <name>getTag</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="40" package="">
+        <name>valid</name>
+        <type>function</type>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="43" package="">
+        <name>inc</name>
+        <type>function</type>
+        <argument line="43">
+          <name>$what</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="vierbergenlars\SemVer" line="53" package="">
+        <name>satisfies</name>
+        <type>function</type>
+        <argument line="53">
+          <name>$versions</name>
+          <default><![CDATA[]]></default>
+          <type>expression</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="56" package="">
+        <name>cmp</name>
+        <type>function</type>
+        <argument line="56">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="56">
+          <name>$cmp</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="56">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="69" package="">
+        <name>gt</name>
+        <type>function</type>
+        <argument line="69">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="69">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="86" package="">
+        <name>gte</name>
+        <type>function</type>
+        <argument line="86">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="86">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="89" package="">
+        <name>lt</name>
+        <type>function</type>
+        <argument line="89">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="89">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="92" package="">
+        <name>lte</name>
+        <type>function</type>
+        <argument line="92">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="92">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="95" package="">
+        <name>eq</name>
+        <type>function</type>
+        <argument line="95">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="95">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="100" package="">
+        <name>neq</name>
+        <type>function</type>
+        <argument line="100">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="100">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="103" package="">
+        <name>compare</name>
+        <type>function</type>
+        <argument line="103">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="103">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="vierbergenlars\SemVer" line="109" package="">
+        <name>rcompare</name>
+        <type>function</type>
+        <argument line="109">
+          <name>$v1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="109">
+          <name>$v2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <namespace name="vierbergenlars" full_name="vierbergenlars">
+    <namespace name="SemVer" full_name="vierbergenlars\SemVer"/>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
